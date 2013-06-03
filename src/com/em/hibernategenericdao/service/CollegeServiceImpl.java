@@ -37,7 +37,7 @@ public class CollegeServiceImpl implements CollegeService {
     @Override
     public Boolean saveCollege(College college) {
 
-        Boolean save = collegeDAO.saveCollege(college);
+        Boolean save = collegeDAO.save(college);
         return save;
     }
 
@@ -52,7 +52,7 @@ public class CollegeServiceImpl implements CollegeService {
     public Boolean addStudentInCollege(String collegeName, Integer StudId) {
 
         College college = collegeDAO.findCollegeByName(collegeName);
-        Student student = studentDAO.findStudentById(StudId);
+        Student student = studentDAO.find(StudId);
         Boolean save = collegeDAO.addStudentInCollege(student, college);
         return save;
     }

@@ -13,34 +13,6 @@ import java.util.List;
 public class EmployeeDAOImpl extends GenericDAOImpl<Employee, Integer> implements EmployeeDAO {
 
     @Override
-    public Boolean saveEmployee(Employee employee) {
-
-        boolean save = save(employee);
-        return save;
-    }
-
-    @Override
-    public Employee findEmployee(Integer id) {
-
-        Employee employee = find(id);
-        return employee;
-    }
-
-    @Override
-    public List<Employee> listOfEmployee() {
-
-        List<Employee> employeeList = findAll();
-        return employeeList;
-    }
-
-    @Override
-    public boolean[] saveMultipleEmployee(Employee[] employees) {
-
-        boolean[] saveEmployees = save(employees);
-        return saveEmployees;
-    }
-
-    @Override
     public Employee findByName(String name) {
 
         Search search = new Search(Employee.class);
@@ -80,12 +52,5 @@ public class EmployeeDAOImpl extends GenericDAOImpl<Employee, Integer> implement
         search.addFilterOr(Filter.equal("empName", name), Filter.equal("empName", name1));
         List<Employee> employees = search(search);
         return employees;
-    }
-
-    @Override
-    public Boolean removeEmployeeById(Integer id) {
-
-        boolean removed = removeById(id);
-        return removed;
     }
 }

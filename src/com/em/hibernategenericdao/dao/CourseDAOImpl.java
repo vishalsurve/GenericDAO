@@ -11,25 +11,11 @@ import com.googlecode.genericdao.search.Search;
 public class CourseDAOImpl extends GenericDAOImpl<Course, Integer> implements CourseDAO {
 
     @Override
-    public Boolean saveCourse(Course course) {
-
-        boolean save = save(course);
-        return save;
-    }
-
-    @Override
     public Course findByName(String Name) {
 
         Search search = new Search(Course.class);
         search.addFilterEqual("courseName", Name);
         Course course = searchUnique(search);
-        return course;
-    }
-
-    @Override
-    public Course findCourseById(Integer id) {
-
-        Course course = find(id);
         return course;
     }
 }

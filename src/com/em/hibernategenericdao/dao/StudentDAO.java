@@ -13,8 +13,6 @@ public interface StudentDAO extends GenericDAO<Student, Integer> {
 
     public Boolean saveStudentAndCourse(Student student);
 
-    public Student findStudentById(Integer id);
-
     public List<Student> findStudentByCourse(Course course);
 
     public Boolean saveStudentAgainstCourse(Student student, Course course);

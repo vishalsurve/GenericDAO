@@ -11,8 +11,6 @@ import java.util.List;
  */
 public interface CollegeDAO extends GenericDAO<College, Integer> {
 
-    public Boolean saveCollege(College college);
-
     public College findCollegeByName(String collegeName);
 
     public Boolean addStudentInCollege(Student student, College college);

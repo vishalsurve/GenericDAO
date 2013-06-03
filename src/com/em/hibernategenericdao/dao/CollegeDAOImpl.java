@@ -14,13 +14,6 @@ import java.util.List;
 public class CollegeDAOImpl extends GenericDAOImpl<College, Integer> implements CollegeDAO {
 
     @Override
-    public Boolean saveCollege(College college) {
-
-        Boolean save = save(college);
-        return save;
-    }
-
-    @Override
     public College findById(Integer collegeId) {
 
 //        Session session = getSession();

@@ -21,28 +21,28 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Boolean saveEmployee(Employee employee) {
 
-        boolean save = employeeDAO.saveEmployee(employee);
+        boolean save = employeeDAO.save(employee);
         return save;
     }
 
     @Override
     public Employee findEmployee(Integer id) {
 
-        Employee employee = employeeDAO.findEmployee(id);
+        Employee employee = employeeDAO.find(id);
         return employee;
     }
 
     @Override
     public List<Employee> listOfEmployee() {
 
-        List<Employee> employeeList = employeeDAO.listOfEmployee();
+        List<Employee> employeeList = employeeDAO.findAll();
         return employeeList;
     }
 
     @Override
     public boolean[] saveMultipleEmployee(Employee[] employees) {
 
-        boolean[] saveEmployees = employeeDAO.saveMultipleEmployee(employees);
+        boolean[] saveEmployees = employeeDAO.save(employees);
         return saveEmployees;
     }
 
@@ -77,7 +77,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Boolean removeEmployeeById(Integer id) {
 
-        Boolean removed = employeeDAO.removeEmployeeById(id);
+        Boolean removed = employeeDAO.removeById(id);
         return removed;
     }
 }

@@ -22,13 +22,6 @@ public class StudentDAOImpl extends GenericDAOImpl<Student, Integer> implements 
     }
 
     @Override
-    public Student findStudentById(Integer id) {
-
-        Student student = find(id);
-        return student;
-    }
-
-    @Override
     public List<Student> findStudentByCourse(Course course) {
 
         Search search = new Search(Student.class);

@@ -32,7 +32,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student findStudentById(Integer id) {
 
-        Student student = studentDAO.findStudentById(id);
+        Student student = studentDAO.find(id);
         return student;
     }
 
@@ -47,7 +47,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Boolean addCourseAgainstStudent(Integer studId, String courseName) {
 
-        Student student = studentDAO.findStudentById(studId);
+        Student student = studentDAO.find(studId);
         Course course = courseDAO.findByName(courseName);
         Boolean save = studentDAO.saveStudentAgainstCourse(student, course);
         return save;

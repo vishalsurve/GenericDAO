@@ -25,7 +25,7 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public Boolean saveCourse(Course course) {
 
-        Boolean save = courseDAO.saveCourse(course);
+        Boolean save = courseDAO.save(course);
         return save;
     }
 
@@ -39,14 +39,14 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public Course findCourceById(Integer id) {
 
-        Course course = courseDAO.findCourseById(id);
+        Course course = courseDAO.find(id);
         return course;
     }
 
     @Override
     public List<Course> listOfCourseByStudent(Integer studId) {
         
-        Student student = studentDAO.findStudentById(studId);
+        Student student = studentDAO.find(studId);
         return null;
     }
 }
